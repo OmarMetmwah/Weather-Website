@@ -4,7 +4,7 @@ weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   result.innerText = "Loading....";
   let address = document.getElementById("addressInput").value;
-  fetch(`http://127.0.0.1:3000/weather?address=${address}`).then((response) => {
+  fetch(`/weather?address=${address}`).then((response) => {
     response.json().then((data) => {
       if (data.error) {
         result.textContent = data.error;
